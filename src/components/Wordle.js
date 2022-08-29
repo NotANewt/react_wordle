@@ -6,8 +6,9 @@ export default function Wordle({ solution }) {
 
   useEffect(() => {
     window.addEventListener("keyup", handleKeyup);
-    return () => window.removeEventListener("keyup", handleKeyup);
-  });
 
-  return <div>Wordle</div>;
+    return () => window.removeEventListener("keyup", handleKeyup);
+  }, [handleKeyup]);
+
+  return <div>current guess - {currentGuess}</div>;
 }
